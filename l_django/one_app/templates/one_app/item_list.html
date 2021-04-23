@@ -2,24 +2,19 @@
 
 {% block content %}
 
-<h1><a href="{% url 'one:create_item' %}">Добавить товар</a></h1>
-<table class="table table-primary table-striped">
-    <tr>
-        <th>Название</th>
-        <th>Цена</th>
-        <th>Поставщик</th>
-        <th>Дата добавления</th>
-    </tr>
+<!--<h1><a href="{% url 'one:create_item' %}">Добавить товар</a></h1>-->
 
-    {% for object in object_list %}
-    <tr>
-        <td>{{ object.title }}</td>
-        <td>{{ object.price }}</td>
-        <td>{{ object.vendor }}</td>
-        <td>{{ object.create_at }}</td>
-    </tr>
-    {% endfor %}
-</table>
+{% include 'one_app/include_table.html' %}
 
+<div style="margin-top: 30px;">
+    <button type="button" class="btn btn-info" id="js-button-add" data-url="{% url 'one:alter_create_item' %}">Добавить товар</button>
+</div>
 
+<div class="modal fade" id="modal-item">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -14,4 +14,9 @@ urlpatterns = [
         'create_item/',
         one_app.CreateItem.as_view(),
         name='create_item'),
+    path(
+        'alter_create_item/',
+        one_app.create,
+        name='alter_create_item'),
     ]
+
