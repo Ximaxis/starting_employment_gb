@@ -1,0 +1,20 @@
+{% extends 'one_app/base.html' %}
+
+{% block content %}
+
+<!--<h1><a href="{% url 'one:create_item' %}">Добавить товар</a></h1>-->
+
+{% include 'one_app/include_table.html' %}
+
+<div style="margin-top: 30px;">
+    <button type="button" class="btn btn-info" id="js-button-add" data-url="{% url 'one:alter_create_item' %}">Добавить товар</button>
+</div>
+
+<div class="modal fade" id="modal-item">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Добавить товар в список</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+      </div>
+<form method="post" action="{% url 'one:alter_create_item' %}" class="js-good-create-form">{% csrf_token %}
+    <div class="modal-body">
+    {{ form.as_p }}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+        <button type="reset" class="btn btn-secondary">Очистить</button>
+        <button type="submit" class="btn btn-primary">Добавить</button>
+      </div>
+</form>
+{% endblock %}

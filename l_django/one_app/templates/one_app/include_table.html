@@ -1,0 +1,17 @@
+<table class="table table-primary table-striped" id="table">
+    <tr>
+        <th>Название</th>
+        <th>Цена</th>
+        <th>Поставщик</th>
+        <th>Дата добавления</th>
+    </tr>
+
+    {% for object in object_list %}
+    <tr>
+        <td>{{ object.title }}</td>
+        <td>{{ object.price }}</td>
+        <td>{{ object.vendor }}</td>
+        <td>{{ object.create_at }}</td>
+    </tr>
+    {% endfor %}
+</table>
